@@ -16,11 +16,7 @@
     <template>
         <article>
             <h2 data_header>-</h2>
-<<<<<<< HEAD
-=======
-    <img data_foto  src="-" alt="-">
-
->>>>>>> origin/master
+            <img data_foto  src="-" alt="-">
             <p data_description>-</p>
             <p data_menu>-</p>
             <adress data_adr> </adress>
@@ -28,7 +24,6 @@
             <number data_number> </number>
             <email data_mail> </email>
             <p data_kontrol> </p>
-
         </article>
    </template>
 
@@ -56,12 +51,8 @@
                 let klon = template.cloneNode(true).content;
                 console.log(klon);
                 klon.querySelector("[data_header]").textContent = sted.title.rendered;
-<<<<<<< HEAD
-=======
-
                 klon.querySelector("[data_foto]").src = sted.acf.billede.url;
                 klon.querySelector("[data_foto]").alt = sted.acf.billede.alt;
->>>>>>> origin/master
                 klon.querySelector("[data_description]").innerHTML = sted.acf.beskrivelse;
                 klon.querySelector("[data_menu]").innerHTML = sted.acf.menu;
                 klon.querySelector("[data_kontrol] ").innerHTML = sted.acf.kontrolrapport;
