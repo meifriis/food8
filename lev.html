@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food8</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <section>
+
+    </section>
+
+    <template>
+        <article>
+            <h2 data_header>-</h2>
+            <p data_description>-</p>
+            <adress data_adr> </adress>
+            <p data_open> </p>
+            <number data_number> </number>
+            <email data_mail> </email>
+
+        </article>
+   </template>
+
+
+
+    <script>
+        let jSonUrl = "http://magnuskea.dk/kea/food8/wordpress/wp-json/wp/v2/levarandor";
+        let levarandor = [];
+        let display = document.querySelector("section");
+        let template = document.querySelector("template");
+
+        document.addEventListener("DOMContentLoaded", hentJson);
+
+        async function hentJson() {
+            let dataJson = await fetch(jSonUrl);
+            levarandor = await dataJson.json();
+            console.log(dataJson);
+            visLevarandor();
+        }
+
+        function visLevarandor() {
+
+            levarandor.forEach(levarandor => {
+                console.log(levarandor);
+                let klon = template.cloneNode(true).content;
+                console.log(klon);
+                klon.querySelector("[data_header]").textContent = levarandor.title.rendered;
+                klon.querySelector("[data_description]").innerHTML = levarandor.acf.beskrivelse;
+                klon.querySelector("[data_adr]").innerHTML = levarandor.acf.adresse;
+                klon.querySelector("[data_number]").innerHTML = levarandor.acf.nummer;
+                klon.querySelector("[data_mail]").innerHTML = levarandor.acf.mail;
+
+                display.appendChild(klon);
+            });
+        }
+    </script>
+</body>
+
+</html>
