@@ -16,7 +16,6 @@
     <template>
         <article>
             <h2 data_header>-</h2>
-                <img data_foto  src="-" alt="-">
 
             <p data_description>-</p>
              <p data_menu>-</p>
@@ -54,8 +53,8 @@
                 let klon = template.cloneNode(true).content;
                 console.log(klon);
                 klon.querySelector("[data_header]").textContent = sted.title.rendered;
-                klon.querySelector("[data_foto]").src = sted.acf.banner.url;
-                klon.querySelector("[data_foto]").alt = sted.acf.banner.alt;
+
+
                 klon.querySelector("[data_description]").innerHTML = sted.acf.beskrivelse;
                 klon.querySelector("[data_menu]").innerHTML = sted.acf.menu;
 
