@@ -1,6 +1,7 @@
 body {
     padding: 0;
     margin: 0;
+
 }
 
 #kontrol a,
@@ -17,6 +18,15 @@ body {
 }
 
 #menu {
+    text-align: center;
+}
+
+#abning {
+    text-align: center;
+    padding: 10px;
+}
+
+#kontrol {
     text-align: center;
 }
 
