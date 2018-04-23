@@ -3,6 +3,23 @@ body {
     margin: 0;
 }
 
+#kontrol a,
+#menu a {
+    text-decoration: none;
+    color: #72C8B6;
+}
+
+#beskrivelse {
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+    font-size: 1em;
+    border-bottom: solid #dddddd 2px;
+}
+
+#menu {
+    text-align: center;
+}
+
 /***NYHEDER******/
 
 /***OM***********/
@@ -14,5 +31,7 @@ body {
 #imgsted {
     width: 100%;
 }
+
+
 
 /*****LEVERANDØR*****/
