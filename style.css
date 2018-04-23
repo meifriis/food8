@@ -8,6 +8,12 @@ body {
 #menu a {
     text-decoration: none;
     color: #72C8B6;
+
+}
+
+#beskrivelse a {
+    text-decoration: none;
+    color: black;
 }
 
 #beskrivelse {
@@ -20,17 +26,47 @@ body {
 #menu {
     text-align: center;
     padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+
+
 }
 
 #kontakt {
     padding: 10px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+}
+
+#kontakt a {
+    text-decoration: none;
+    color: black;
 }
 
 #kontrol {
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
 }
 
 /***NYHEDER******/
+
+h2 {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+#imgnyhed {
+    width: 100%;
+}
+
+#overskrift {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+
+}
 
 /***OM***********/
 

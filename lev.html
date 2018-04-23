@@ -18,10 +18,8 @@
             <h2 id="overkrift" data_header>-</h2>
             <img id="imgleverandor" data_foto  src="-" alt="-">
             <p id="beskrivelse" data_description>-</p>
-            <adress id="adresse" data_adr> </adress>
-            <p id="abning" data_open> </p>
-            <number id="nummer" data_number> </number>
-            <email id="email" data_mail> </email>
+            <p id="kontakt" data_kontakt> </p>
+
         </article>
    </template>
 
@@ -52,9 +50,7 @@
                 klon.querySelector("[data_foto]").src = levarandor.acf.billede.url;
                 klon.querySelector("[data_foto]").alt = levarandor.acf.billede.alt;
                 klon.querySelector("[data_description]").innerHTML = levarandor.acf.beskrivelse;
-                klon.querySelector("[data_adr]").innerHTML = levarandor.acf.adresse;
-                klon.querySelector("[data_number]").innerHTML = levarandor.acf.nummer;
-                klon.querySelector("[data_mail]").innerHTML = levarandor.acf.mail;
+                klon.querySelector("[data_kontakt]").innerHTML = levarandor.acf.kontakt;
 
                 display.appendChild(klon);
             });
