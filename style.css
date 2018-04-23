@@ -4,6 +4,77 @@ body {
 
 }
 
+/******************MENU************************/
+
+button img {
+    width: 50%;
+}
+
+.dropbtn {
+    background-color: #85BDDC;
+    color: white;
+    padding: 8px;
+    width: 113px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+
+}
+
+
+/*------ DROPDOWN CONTAINER -------*/
+
+.dropdown {
+    position: fixed;
+    display: inline-block;
+    width: 100%;
+    top: 185px;
+    background-color: #85BDDC;
+    z-index: 1;
+    text-align: center;
+}
+
+.dropdown ul {
+    background-color: #85BDDC;
+    list-style-type: none;
+
+}
+
+
+/*-------- DROPDOWN INDHOLD -------*/
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    font-family: "Open Sans", sans-serif;
+    background-color: #85BDDC;
+    font-size: 1.3em;
+    min-width: 270px;
+    z-index: 1;
+    margin-left: 60px;
+}
+
+.dropdown-content a {
+    color: #ffffff;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #ffffff;
+    color: #5d6f7d;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/**************************OVERORDNET********************/
+
 #kontrol a,
 #menu a {
     text-decoration: none;
@@ -48,6 +119,20 @@ body {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     padding: 10px;
+}
+
+
+
+
+
+
+
+/****FORSIDE******/
+
+#imgsforside {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
 }
 
 /***NYHEDER******/
