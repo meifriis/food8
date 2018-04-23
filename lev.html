@@ -16,6 +16,7 @@
     <template>
         <article>
             <h2 data_header>-</h2>
+            <img data_foto  src="-" alt="-">
             <p data_description>-</p>
             <adress data_adr> </adress>
             <p data_open> </p>
@@ -49,6 +50,8 @@
                 let klon = template.cloneNode(true).content;
                 console.log(klon);
                 klon.querySelector("[data_header]").textContent = levarandor.title.rendered;
+                klon.querySelector("[data_foto]").src = levarandor.acf.billede.url;
+                klon.querySelector("[data_foto]").alt = levarandor.acf.billede.alt;
                 klon.querySelector("[data_description]").innerHTML = levarandor.acf.beskrivelse;
                 klon.querySelector("[data_adr]").innerHTML = levarandor.acf.adresse;
                 klon.querySelector("[data_number]").innerHTML = levarandor.acf.nummer;
