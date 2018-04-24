@@ -27,13 +27,12 @@ button img {
 /*------ DROPDOWN CONTAINER -------*/
 
 .dropdown {
-    position: fixed;
     display: inline-block;
     width: 100%;
-    top: 200px;
     background-color: #57626e;
     z-index: 1;
     text-align: center;
+    margin-top: 30px;
 }
 
 .dropdown ul {
