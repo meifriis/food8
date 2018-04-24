@@ -4,6 +4,12 @@ body {
     background-color: #fbfaf2;
 }
 
+#logo {
+    width 100%;
+    display: block;
+    margin: 0 auto;
+}
+
 /******************MENU************************/
 
 button img {
