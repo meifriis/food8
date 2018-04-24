@@ -37,9 +37,6 @@
     <article>
          <img id="imgsted" data_foto  src="" alt="">
             <p id="beskrivelse"data_description></p>
-            <p id="menu"data_menu></p>
-           <p id="kontakt" data_kontakt> </p>
-            <p id="kontrol" data_kontrol> </p>
         </article>
    </template>
 
@@ -76,9 +73,6 @@
                 klon.querySelector("[data_foto]").src = sted.acf.billede.url;
                 klon.querySelector("[data_foto]").alt = sted.acf.billede.alt;
                 klon.querySelector("[data_description]").innerHTML = sted.acf.beskrivelse;
-                klon.querySelector("[data_menu]").innerHTML = sted.acf.menu;
-                klon.querySelector("[data_kontrol] ").innerHTML = sted.acf.kontrolrapport;
-                klon.querySelector("[data_kontakt]").innerHTML = sted.acf.kontakt;
                 klon.querySelector("[data_foto]").addEventListener("click", () => {
                     location.href = "sted.html?id=" + sted.id;
 
