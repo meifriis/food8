@@ -29,7 +29,6 @@ body {
     width: 13%;
     border: none;
     cursor: pointer;
-
 }
 
 
@@ -48,7 +47,6 @@ body {
 .dropdown ul {
     background-color: #7cccba;
     list-style-type: none;
-
 }
 
 
@@ -180,6 +178,9 @@ h2 {
 
 #imgguide {
     width: 100%;
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
 }
 
 bekrivelse a {
@@ -190,6 +191,9 @@ bekrivelse a {
 
 #imgsted {
     width: 100%;
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
 }
 
 
@@ -198,6 +202,9 @@ bekrivelse a {
 
 #imgleverandor {
     width: 100%;
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
 }
 
 /*****FOOTER*****/
