@@ -4,10 +4,11 @@ body {
     background-color: #fbfaf2;
 }
 
-#logo {
-    width 100%;
+#forside img {
+    width: 90%;
     display: block;
     margin: 0 auto;
+
 }
 
 /******************MENU************************/
