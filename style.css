@@ -174,3 +174,36 @@ h2 {
 #imgleverandor {
     width: 100%;
 }
+
+/*****FOOTER*****/
+
+.socialmedia {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+.content_box img {
+    width: 15%;
+}
+
+.content_box {
+    grid-column: 2 / 4;
+    padding: 16px;
+}
+
+footer {
+    background-color: #052951;
+    width: 100%;
+    position: absolute;
+    height: auto;
+
+}
+
+footer p {
+    text-align: center;
+    color: whitesmoke;
+    font-size: 1em;
+
+}
