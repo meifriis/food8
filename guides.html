@@ -17,6 +17,7 @@
     <article >
     <h2 id="overskrift" data_overskrift> </h2>
     <p id="beskrivelse" data_beskrivelse> </p>
+    <img id="imgguide" data_foto>
      </article>
    </template>
 
@@ -39,15 +40,15 @@
 
         function visGuides() {
 
-            guides.forEach(guid => {
-                console.log(guid);
+            guides.forEach(guide => {
+                console.log(guide);
                 let klon = template.cloneNode(true).content;
                 console.log(klon);
-                klon.querySelector("[data_overskrift]").textContent = guid.acf.overskrift;
-                klon.querySelector("[data_foto]").src = guid.acf.billede.url;
-                klon.querySelector("[data_foto]").alt = guid.acf.billede.alt;
+                klon.querySelector("[data_overskrift]").textContent = guide.acf.overskrift;
+                klon.querySelector("[data_foto]").src = guide.acf.billede.url;
+                klon.querySelector("[data_foto]").alt = guide.acf.billede.alt;
 
-                klon.querySelector("[data_beskrivelse]").innerHTML = guid.acf.beskrivelse;
+                klon.querySelector("[data_beskrivelse]").innerHTML = guide.acf.beskrivelse;
 
 
                 display.appendChild(klon);
