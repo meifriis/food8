@@ -46,9 +46,6 @@
             display.querySelector("[data_foto]").src = nyhed.acf.billede.url;
             display.querySelector("[data_foto]").alt = nyhed.acf.billede.alt;
             display.querySelector("[data_description]").innerHTML = nyhed.acf.beskrivelse;
-            display.querySelector("[data_menu]").innerHTML = nyhed.acf.menu;
-            display.querySelector("[data_kontrol] ").innerHTML = nyhed.acf.kontrolrapport;
-            display.querySelector("[data_kontakt]").innerHTML = nyhed.acf.kontakt;
             display.querySelector("[data_foto]").addEventListener("click", () => {
                 location.href = "nyhed.html?id=" + nyhed.id;
             });
