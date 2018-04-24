@@ -15,8 +15,7 @@
 
     <template>
         <article>
-            <h2 id="overkrift" data_header>-</h2>
-            <img id="imgleverandor" data_foto  src="-" alt="-">
+            <img id="imgleverandor" data_foto  src="" alt="">
             <p id="beskrivelse" data_description>-</p>
             <p id="kontakt" data_kontakt> </p>
 
@@ -46,11 +45,14 @@
                 console.log(levarandor);
                 let klon = template.cloneNode(true).content;
                 console.log(klon);
-                klon.querySelector("[data_header]").textContent = levarandor.title.rendered;
                 klon.querySelector("[data_foto]").src = levarandor.acf.billede.url;
                 klon.querySelector("[data_foto]").alt = levarandor.acf.billede.alt;
                 klon.querySelector("[data_description]").innerHTML = levarandor.acf.beskrivelse;
                 klon.querySelector("[data_kontakt]").innerHTML = levarandor.acf.kontakt;
+                klon.querySelector("[data_foto]").addEventListener("click", () => {
+                    location.href = "lev.html?id=" + levarandor.id;
+
+                });
 
                 display.appendChild(klon);
             });
