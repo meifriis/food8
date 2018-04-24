@@ -14,7 +14,6 @@
 
 <body>
     <section>
-
     </section>
 
     <template>
@@ -65,16 +64,12 @@
                 klon.querySelector("[data_menu]").innerHTML = sted.acf.menu;
                 klon.querySelector("[data_kontrol] ").innerHTML = sted.acf.kontrolrapport;
                 klon.querySelector("[data_kontakt]").innerHTML = sted.acf.kontakt;
+                klon.querySelector("[data_foto]").addEventListener("click", () => {
+                    location.href = "sted.html?id=" + sted.id;
 
-
-
+                });
                 display.appendChild(klon);
-
-
             });
-
-
-
         }
     </script>
 </body>
