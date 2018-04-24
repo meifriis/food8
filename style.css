@@ -1,7 +1,7 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: #f6f1e5;
+    background-color: #fbfaf2;
 }
 
 #logo {
@@ -186,7 +186,6 @@ h2 {
     height: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
 }
 
 .content_box img {
@@ -198,17 +197,25 @@ h2 {
     padding: 16px;
 }
 
+.content_box2 img {
+    width: 60%;
+}
+
+.content_box2 {
+    display: block;
+    margin: 0 auto;
+}
+
 footer {
-    background-color: #052951;
+    background-color: #fbfaf2;
     width: 100%;
     position: absolute;
     height: auto;
-
 }
 
 footer p {
     text-align: center;
-    color: whitesmoke;
+    color: #57626e;
     font-size: 1em;
 
 }
