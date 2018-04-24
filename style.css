@@ -86,7 +86,8 @@ body {
     color: black;
 }
 
-#beskrivelse {
+#beskrivelse,
+p {
     font-family: 'Open Sans', sans-serif;
     padding: 10px;
     font-size: 1em;
@@ -119,9 +120,6 @@ body {
     font-family: 'Open Sans', sans-serif;
     padding: 10px;
 }
-
-
-
 
 
 
@@ -208,7 +206,7 @@ footer {
 
 footer p {
     text-align: center;
-    color: #57626e;
+    color: #f1f1f1;
     font-size: 1em;
 
 }
