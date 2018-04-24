@@ -13,15 +13,11 @@ body {
 
 /******************MENU************************/
 
-button img {
-    width: 50%;
-}
-
 .dropbtn {
     background-color: #57626e;
     color: white;
-    padding: 8px;
-    width: 113px;
+    padding: 4px;
+    width: 13%;
     border: none;
     cursor: pointer;
     font-size: 1.5em;
