@@ -78,7 +78,6 @@ body {
 #menu a {
     text-decoration: none;
     color: #72C8B6;
-
 }
 
 #beskrivelse a {
@@ -99,8 +98,6 @@ p {
     padding: 10px;
     font-family: 'Open Sans', sans-serif;
     padding: 10px;
-
-
 }
 
 #kontakt {
@@ -207,6 +204,5 @@ footer {
 footer p {
     text-align: center;
     color: #f1f1f1;
-    font-size: 1em;
-
+    font-size: 0.7em;
 }
