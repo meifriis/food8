@@ -36,7 +36,7 @@
     <template>
     <article>
          <img id="imgsted" data_foto  src="" alt="">
-            <p id="beskrivelse"data_description></p>
+<!--            <p id="beskrivelse"data_description></p>-->
         </article>
    </template>
 
@@ -50,19 +50,12 @@
         document.addEventListener("DOMContentLoaded", hentJson);
 
 
-
-
         async function hentJson() {
             let dataJson = await fetch(jSonUrl);
             steder = await dataJson.json();
             console.log(dataJson);
             visSteder();
         }
-
-
-
-
-
 
         function visSteder() {
 
@@ -72,7 +65,7 @@
                 console.log(klon);
                 klon.querySelector("[data_foto]").src = sted.acf.billede.url;
                 klon.querySelector("[data_foto]").alt = sted.acf.billede.alt;
-                klon.querySelector("[data_description]").innerHTML = sted.acf.beskrivelse;
+                //                klon.querySelector("[data_description]").innerHTML = sted.acf.beskrivelse;
                 klon.querySelector("[data_foto]").addEventListener("click", () => {
                     location.href = "sted.html?id=" + sted.id;
 

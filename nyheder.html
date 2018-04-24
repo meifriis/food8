@@ -37,9 +37,7 @@
     <article >
     <img id="imgnyhed" data_foto  src="" alt="">
     <h2 id="overskrift" data_overskrift> </h2>
-
-    <p id="beskrivelse" data_beskrivelse> </p>
-     </article>
+<!--<p id="beskrivelse" data_beskrivelse> </p>-->     </article>
    </template>
 
 
@@ -68,8 +66,7 @@
                 klon.querySelector("[data_overskrift]").textContent = nyhed.acf.overskrift_;
                 klon.querySelector("[data_foto]").src = nyhed.acf.nyhedsbillede.url;
                 klon.querySelector("[data_foto]").alt = nyhed.acf.nyhedsbillede.alt;
-                klon.querySelector("[data_beskrivelse]").innerHTML = nyhed.acf.beskrivelse_;
-
+// klon.querySelector("[data_beskrivelse]").innerHTML = nyhed.acf.beskrivelse_;
                 klon.querySelector("[data_foto]").addEventListener("click", () => {
                     location.href = "nyhed.html?id=" + nyhed.id;
 
@@ -79,7 +76,6 @@
                 display.appendChild(klon);
             });
         }
-
     </script>
 </body>
 

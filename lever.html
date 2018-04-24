@@ -26,23 +26,17 @@
         </section>
     </header>
 
-
-
-
     <section>
-
     </section>
 
     <template>
         <article>
             <img id="imgleverandor" data_foto  src="" alt="">
-            <p id="beskrivelse" data_description></p>
-            <p id="kontakt" data_kontakt> </p>
+<!--            <p id="beskrivelse" data_description></p>-->
+<!--            <p id="kontakt" data_kontakt> </p>-->
 
         </article>
    </template>
-
-
 
     <script>
         let jSonUrl = "http://magnuskea.dk/kea/food8/wordpress/wp-json/wp/v2/levarandor";
@@ -67,8 +61,8 @@
                 console.log(klon);
                 klon.querySelector("[data_foto]").src = levarandor.acf.billede.url;
                 klon.querySelector("[data_foto]").alt = levarandor.acf.billede.alt;
-                klon.querySelector("[data_description]").innerHTML = levarandor.acf.beskrivelse;
-                klon.querySelector("[data_kontakt]").innerHTML = levarandor.acf.kontakt;
+                //                klon.querySelector("[data_description]").innerHTML = levarandor.acf.beskrivelse;
+                //                klon.querySelector("[data_kontakt]").innerHTML = levarandor.acf.kontakt;
                 klon.querySelector("[data_foto]").addEventListener("click", () => {
                     location.href = "lev.html?id=" + levarandor.id;
 
@@ -77,6 +71,7 @@
                 display.appendChild(klon);
             });
         }
+
     </script>
 </body>
 
