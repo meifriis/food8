@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <title>Food8</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <article>
+            <img id="imgnyhed" data_foto src="" alt="">
+            <p id="beskrivelse" data_description>-</p>
+            <p id="menu" data_menu>-</p>
+            <p id="kontakt" data_kontakt> </p>
+            <p id="kontrol" data_kontrol> </p>
+        </article>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", hentJson);
+        let url = new URL(window.location.href);
+        let searchParams = new URLSearchParams(url.search);
+        let id = searchParams.get("id");
+        let apiURL = "http://magnuskea.dk/kea/food8/wordpress/wp-json/wp/v2/nyhedder" + id;
+        let nyhed = {};
+
+        async function hentJson() {
+            let dataJson = await fetch(apiURL);
+            nyhed = await dataJson.json();
+            console.log("Fetch it Gretchen");
+            visNyhed();
+        }
+
+
+
+        function visNyhed() {
+            console.log(nyhed);
+            let display = document.querySelector("section");
+            display.querySelector("[data_foto]").src = nyhed.acf.billede.url;
+            display.querySelector("[data_foto]").alt = nyhed.acf.billede.alt;
+            display.querySelector("[data_description]").innerHTML = nyhed.acf.beskrivelse;
+            display.querySelector("[data_menu]").innerHTML = nyhed.acf.menu;
+            display.querySelector("[data_kontrol] ").innerHTML = nyhed.acf.kontrolrapport;
+            display.querySelector("[data_kontakt]").innerHTML = nyhed.acf.kontakt;
+            display.querySelector("[data_foto]").addEventListener("click", () => {
+                location.href = "nyhed.html?id=" + nyhed.id;
+            });
+        };
+    </script>
+</body>
+
+</html>

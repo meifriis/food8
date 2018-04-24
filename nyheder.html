@@ -48,17 +48,15 @@
                 klon.querySelector("[data_foto]").src = nyhed.acf.billede.url;
                 klon.querySelector("[data_foto]").alt = nyhed.acf.billede.alt;
                 klon.querySelector("[data_beskrivelse]").innerHTML = nyhed.acf.beskrivelse_;
+                klon.querySelector("[data_foto]").addEventListener("click", () => {
+                    location.href = "nyhed.html?id=" + nyhed.id;
 
 
+
+                });
                 display.appendChild(klon);
-
-
             });
-
-
-
         }
-
     </script>
 </body>
 
