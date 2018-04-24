@@ -206,3 +206,11 @@ footer p {
     color: #f1f1f1;
     font-size: 0.7em;
 }
+
+footer a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.7em;
+
+}
