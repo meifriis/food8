@@ -13,10 +13,27 @@
 </head>
 
 <body>
-    <section>
-    </section>
+    <header>
+        <header>
+            <section id="forside">
+                <img src="img/logo.png" alt="logo">
+                <div class="dropdown">
+                    <button class="dropbtn"><img src="img/menu%20hvid.png"></button>
+                    <div class="dropdown-content">
+                        <a href="forside.html"> Forside </a>
+                        <a href="sted.html"> Steder </a>
+                        <a href="lev.html"> Leverandører </a>
+                        <a href="guides.html"> Guides </a>
+                        <a href="om.html"> Om food8 </a>
+                    </div>
+                </div>
+            </section>
+        </header>
 
-    <template>
+        <section>
+        </section>
+
+        <template>
     <article>
          <img id="imgsted" data_foto  src="" alt="">
             <p id="beskrivelse"data_description></p>
@@ -27,51 +44,49 @@
    </template>
 
 
+        <script>
+            let jSonUrl = "http://magnuskea.dk/kea/food8/wordpress/wp-json/wp/v2/steder";
+            let steder = [];
+            let display = document.querySelector("section");
+            let template = document.querySelector("template");
 
-    <script>
-        let jSonUrl = "http://magnuskea.dk/kea/food8/wordpress/wp-json/wp/v2/steder";
-        let steder = [];
-        let display = document.querySelector("section");
-        let template = document.querySelector("template");
-
-        document.addEventListener("DOMContentLoaded", hentJson);
-
-        async function hentJson() {
-            let dataJson = await fetch(jSonUrl);
-            steder = await dataJson.json();
-            console.log(dataJson);
-            visSteder();
-        }
+            document.addEventListener("DOMContentLoaded", hentJson);
 
 
-        //
-        //
-        //        async function hentHeader() {
-        //            let headerData = await fetch("forside.html");
-        //            let header = await headerData.text();
-        //            document.querySelector("#forside").innerHTML = header;
-        //        }
 
-        function visSteder() {
 
-            steder.forEach(sted => {
-                console.log(sted);
-                let klon = template.cloneNode(true).content;
-                console.log(klon);
-                klon.querySelector("[data_foto]").src = sted.acf.billede.url;
-                klon.querySelector("[data_foto]").alt = sted.acf.billede.alt;
-                klon.querySelector("[data_description]").innerHTML = sted.acf.beskrivelse;
-                klon.querySelector("[data_menu]").innerHTML = sted.acf.menu;
-                klon.querySelector("[data_kontrol] ").innerHTML = sted.acf.kontrolrapport;
-                klon.querySelector("[data_kontakt]").innerHTML = sted.acf.kontakt;
-                klon.querySelector("[data_foto]").addEventListener("click", () => {
-                    location.href = "sted.html?id=" + sted.id;
+            async function hentJson() {
+                let dataJson = await fetch(jSonUrl);
+                steder = await dataJson.json();
+                console.log(dataJson);
+                visSteder();
+            }
 
+
+
+
+
+
+            function visSteder() {
+
+                steder.forEach(sted => {
+                    console.log(sted);
+                    let klon = template.cloneNode(true).content;
+                    console.log(klon);
+                    klon.querySelector("[data_foto]").src = sted.acf.billede.url;
+                    klon.querySelector("[data_foto]").alt = sted.acf.billede.alt;
+                    klon.querySelector("[data_description]").innerHTML = sted.acf.beskrivelse;
+                    klon.querySelector("[data_menu]").innerHTML = sted.acf.menu;
+                    klon.querySelector("[data_kontrol] ").innerHTML = sted.acf.kontrolrapport;
+                    klon.querySelector("[data_kontakt]").innerHTML = sted.acf.kontakt;
+                    klon.querySelector("[data_foto]").addEventListener("click", () => {
+                        location.href = "sted.html?id=" + sted.id;
+
+                    });
+                    display.appendChild(klon);
                 });
-                display.appendChild(klon);
-            });
-        }
-    </script>
+            }
+        </script>
 </body>
 
 </html>
