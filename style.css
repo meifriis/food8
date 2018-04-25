@@ -11,6 +11,10 @@ body {
 
 }
 
+.mySlides {
+    display: none;
+}
+
 #map {
     width: 90vw;
     height: 90vw;
@@ -279,6 +283,9 @@ fieldset p {
 fieldset {
     border: none;
 }
+
+
+
 
 #bookbord {
     background-color: #57626e;
