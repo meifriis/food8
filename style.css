@@ -15,6 +15,12 @@ body {
     display: none;
 }
 
+#splash {
+    padding: 10px;
+    margin-bottom: -25px;
+}
+
+
 #map {
     width: 90vw;
     height: 90vw;
@@ -246,7 +252,7 @@ summary:hover {
     margin: 0 auto;
 }
 
-#imglillested {
+#imgsted1 {
     width: 90%;
     display: block;
     margin: auto;
@@ -330,7 +336,7 @@ fieldset {
 /*****LEVERANDØR*****/
 
 #imgleverandor {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     display: block;
     margin: 0 auto;
