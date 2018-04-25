@@ -227,6 +227,21 @@ bekrivelse a {
     margin: 0 auto;
 }
 
+#imglillested {
+    width: 90%;
+    display: block;
+    margin: auto;
+
+}
+
+#stedbeskrivelse {
+    font-family: 'Open sans', sans-serif;
+    font-size: 1.em;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
 
 
 /*****LEVERANDØR*****/
