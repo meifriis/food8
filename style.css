@@ -220,6 +220,21 @@ bekrivelse a {
 
 /*****STEDER******/
 
+#steddetails {
+    padding: 10px;
+    padding-bottom: 30px;
+}
+
+summary {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.7em;
+}
+
+summary:hover {
+    color: #7cccba;
+}
+
+
 #imgsted {
     width: 100%;
     padding: 10px;
