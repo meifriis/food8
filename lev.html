@@ -79,7 +79,14 @@
 
             position.lat = parseFloat(levarandor.acf.lat);
             position.lng = parseFloat(levarandor.acf.lng);
-            icon = levarandor.acf.icon;
+
+
+
+            var icon = {
+                url: levarandor.acf.icon.url,
+
+                scaledSize: new google.maps.Size(40, 40)
+            };
 
             let marker = new google.maps.Marker({
                 position: position,
@@ -121,6 +128,7 @@
 
             hentJson();
         }
+
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpaz6ijnO6nG3lE-sZdqDWNLVHTP7TZPw
