@@ -148,12 +148,6 @@ body {
 
 /***NYHEDER******/
 
-h2 {
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
-
-}
-
 #imgnyhed {
     width: 100%;
 }
@@ -165,6 +159,7 @@ h2 {
     padding: 10px;
 
 }
+
 
 #lillebeskrivelse {
     font-family: 'Open Sans', sans-serif;
@@ -222,6 +217,15 @@ button:hover {
     padding: 10px;
     display: block;
     margin: 0 auto;
+}
+
+#overskriftguid {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 1.7em;
+    padding: 10px;
+    margin-bottom: -20px;
+
 }
 
 bekrivelse a {
