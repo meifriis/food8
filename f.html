@@ -3,23 +3,17 @@
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-    .mySlides {
-        display: none;
-    }
-</style>
 
 <body>
 
     <div class="w3-content w3-section" style="max-width:500px">
-        <img class="mySlides" src="img/cleavers.png" style="width:100%">
-        <img class="mySlides" src="img/metier.png" style="width:100%">
-        <img class="mySlides" src="img/rod.png" style="width:100%">
-        <img class="mySlides" src="img/noho.png" style="width:100%">
-        <img class="mySlides" src="img/fatpike.png" style="width:100%">
-        <img class="mySlides" src="img/spisehuset.png" style="width:100%">
-        <img class="mySlides" src="img/unmercato.png" style="width:100%">
-        <img class="mySlides" src="img/fleisch.png" style="width:100%">
+        <p>The w3-animate-fading class animates an element in and out (takes about 10 seconds).</p>
+
+        <img class="mySlides w3-animate-fading" src="img/cleavers.png" style="width:100%">
+        <img class="mySlides w3-animate-fading" src="img/fatpike.png" style="width:100%">
+        <img class="mySlides w3-animate-fading" src="img/rod.png" style="width:100%">
+        <img class="mySlides w3-animate-fading" src="img/fleisch.png" style="width:100%">
+        <img class="mySlides w3-animate-fading" src="img/noho.png" style="width:100%">
 
     </div>
 
@@ -38,9 +32,10 @@
                 myIndex = 1
             }
             x[myIndex - 1].style.display = "block";
-            setTimeout(carousel, 3000); // Change image every 2 seconds
+            setTimeout(carousel, 9000);
         }
     </script>
 
 </body>
+
 </html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <title>Food8</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <section id="forside">
+
+            <img src="img/logo.png" alt="logo">
+
+            <div class="dropdown">
+                <button class="dropbtn"><img src="img/menu%20hvid.png"></button>
+                <div class="dropdown-content">
+                    <a href="index.html"> Forside </a>
+                    <a href="nyheder.html"> Nyheder </a>
+                    <a href="steder.html"> Steder </a>
+                    <a href="lever.html"> Leverandører </a>
+                    <a href="guides.html"> Guides </a>
+                    <a href="om.html"> Om Food8 </a>
+
+                </div>
+            </div>
+        </section>
+
+
+    </header>
+
+    <section>
+
+    </section>
+
+    <template>
+    <article >
+    <h2 id="overskrift" data_overskrift> </h2>
+    <p id="om" data_beskrivelse> </p>
+     </article>
+   </template>
+
+
+
+    <div id="map"></div>
+
+    <script>
+        let jSonUrl = "http://magnuskea.dk/kea/food8/wordpress/wp-json/wp/v2/omfood8_";
+        let omfood = [];
+        let display = document.querySelector("section");
+        let template = document.querySelector("template");
+
+        document.addEventListener("DOMContentLoaded", hentJson);
+
+        async function hentJson() {
+            let dataJson = await fetch(jSonUrl);
+            omfood = await dataJson.json();
+            console.log(omfood);
+            visOmfood();
+        }
+
+        function visOmfood() {
+
+            omfood.forEach(om => {
+                console.log(om);
+                let klon = template.cloneNode(true).content;
+                console.log(klon);
+                klon.querySelector("[data_overskrift]").textContent = om.acf.overskrift;
+                klon.querySelector("[data_beskrivelse]").innerHTML = om.acf.om_food8;
+
+
+                display.appendChild(klon);
+
+
+            });
+
+
+
+        }
+
+
+        let map;
+
+        let fleisch = {
+            lat: 55.669064,
+            lng: 12.5401188
+        };
+
+        let rod = {
+            lat: 55.6882502,
+            lng: 12.561815499999966
+        };
+
+        let um = {
+            lat: 55.6839283,
+            lng: 12.570082100000036
+        };
+
+
+        let fat = {
+            lat: 55.6666107,
+            lng: 12.579910599999948
+        };
+
+        let metier = {
+            lat: 55.695038,
+            lng: 12.569340000000011
+        };
+
+        let cleavers = {
+            lat: 55.6836899,
+            lng: 12.569765500000017
+        };
+
+        let noho = {
+            lat: 55.6676429,
+            lng: 12.558010400000057
+        };
+
+
+        let spis = {
+            lat: 55.66918399999999,
+            lng: 12.560793900000021
+        };
+
+        /**********************************************/
+
+        function initMap() {
+            // Create a map object and specify the DOM element for display.
+            var map = new google.maps.Map(document.querySelector('#map'), {
+                center: rod,
+                zoom: 12.5
+            });
+
+
+            var fimg = {
+                url: "fleisch.jpg", // url
+                scaledSize: new google.maps.Size(40, 40), // scaled size
+
+            };
+
+            var rimg = {
+                url: "rod.png", // url
+                scaledSize: new google.maps.Size(50, 30), // scaled size
+
+            };
+
+            var umimg = {
+                url: "um.jpg", // url
+                scaledSize: new google.maps.Size(40, 40), // scaled size
+
+            };
+
+
+            var fatimg = {
+                url: "fat.png", // url
+                scaledSize: new google.maps.Size(40, 40), // scaled size
+
+            };
+
+            var metierimg = {
+                url: "metier.jpg", // url
+                scaledSize: new google.maps.Size(40, 40), // scaled size
+
+            };
+
+            var cleaversimg = {
+                url: "cleavers.jpg", // url
+                scaledSize: new google.maps.Size(40, 40), // scaled size
+
+            };
+
+            var nohoimg = {
+                url: "noho.png", // url
+                scaledSize: new google.maps.Size(40, 50), // scaled size
+
+            };
+
+            var spisimg = {
+                url: "spis.jpg", // url
+                scaledSize: new google.maps.Size(40, 40), // scaled size
+
+            };
+
+
+
+            /**********************************************/
+
+
+            let marker = new google.maps.Marker({
+                position: fleisch,
+                title: "Fleisch",
+                icon: fimg,
+                map: map
+
+            });
+
+
+            let marker1 = new google.maps.Marker({
+                position: rod,
+                title: "Rødder og Vin",
+                icon: rimg,
+                map: map
+
+            });
+
+            let marker2 = new google.maps.Marker({
+                position: um,
+                title: "Un Mercato",
+                icon: umimg,
+                map: map
+
+            });
+
+
+            let marker3 = new google.maps.Marker({
+                position: fat,
+                title: "Fat",
+                icon: fatimg,
+                map: map
+
+            });
+
+            let marker4 = new google.maps.Marker({
+                position: metier,
+                title: "Metier",
+                icon: metierimg,
+                map: map
+
+            });
+
+            let marker5 = new google.maps.Marker({
+                position: cleavers,
+                title: "Cleavers Meat Market",
+                icon: cleaversimg,
+                map: map
+
+            });
+
+            let marker6 = new google.maps.Marker({
+                position: noho,
+                title: "NOHO",
+                icon: nohoimg,
+                map: map
+
+            });
+
+            let marker7 = new google.maps.Marker({
+                position: spis,
+                title: "Spisehuset",
+                icon: spisimg,
+                map: map
+
+            });
+
+            /**********************************************/
+
+            let infowindow = new google.maps.InfoWindow({
+                content: "<h2> Fleisch</h2> <p> Slagterboderne 7, 1716 København </p> "
+            });
+            let infowindow2 = new google.maps.InfoWindow({
+                content: "<h2> Rødder og Vin</h2> <p>  Ravnsborggade 8, 2200 København N </p> "
+            });
+
+
+
+
+            let infowindow3 = new google.maps.InfoWindow({
+                content: "<h2> Un Mercato</h2> <p>  Frederiksborggade 19 1360 København K </p> "
+            });
+
+
+            let infowindow4 = new google.maps.InfoWindow({
+                content: "<h2> The Fat Pike</h2> <p> Njalsgade 19D, 2300 København H </p> "
+            });
+
+            let infowindow5 = new google.maps.InfoWindow({
+                content: "<h2> Metier</h2> <p> Blegdamsvej 70 2100 København Ø </p> "
+            });
+
+            let infowindow6 = new google.maps.InfoWindow({
+                content: "<h2> Cleavers Meat Market</h2> <p>  H3 Frederiksborggade 21 1360 København K </p> "
+            });
+
+            let infowindow7 = new google.maps.InfoWindow({
+                content: "<h2> NOHO</h2> <p> Flæsketorvet 28 1711 København V </p> "
+            });
+
+            let infowindow8 = new google.maps.InfoWindow({
+                content: "<h2> Spisehuset</h2> <p> Slagtehusgade 5c 1715 København V </p> "
+            });
+            /**********************************************/
+
+            marker.addListener('click', function() {
+                infowindow.open(map, marker);
+            });
+
+
+            marker1.addListener('click', function() {
+                infowindow2.open(map, marker1);
+            });
+
+            marker2.addListener('click', function() {
+                infowindow3.open(map, marker2);
+            });
+
+
+
+            marker3.addListener('click', function() {
+                infowindow4.open(map, marker3);
+            });
+
+            marker4.addListener('click', function() {
+                infowindow5.open(map, marker4);
+            });
+
+            marker5.addListener('click', function() {
+                infowindow6.open(map, marker5);
+            });
+
+            marker6.addListener('click', function() {
+                infowindow7.open(map, marker6);
+            });
+
+            marker7.addListener('click', function() {
+                infowindow8.open(map, marker7);
+            });
+        }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpaz6ijnO6nG3lE-sZdqDWNLVHTP7TZPw
+&callback=initMap" async defer></script>
+
+
+    <footer>
+        <div class="socialmedia">
+            <div class="content_box">
+                <a href="https://www.facebook.com/food8dk/" target="_blank">
+                    <img alt="facebook" src="img/facebook%20logo.png">
+                </a>
+                <a href="https://www.instagram.com/food8dk/" target="_blank">
+                    <img alt="content_box instagram" src="img/insta.png">
+                </a>
+            </div>
+
+        </div>
+        <div class="content_box2">
+            <a href="http://stromworks.com/" target="_blank">
+                    <img alt="content_box strom" src="img/strom.png">
+                </a>
+        </div>
+        <div>
+            <p>info@food8.dk</p>
+            <p><a href="https://food8.dk/cookie-og-privatlivspolitik/"><u>Cookie- og privatlivspolitik</u></a></p>
+            <p>Food8 ApS — Langelinie 10, 2100 København Ø — CVR nr. 39306999</p>
+        </div>
+    </footer>
+</body>
+
+</html>
