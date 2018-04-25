@@ -154,6 +154,12 @@ h2 {
 
 }
 
+#lillebeskrivelse {
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+
+}
+
 #imgnyhed1 {
     width: 90%;
     padding: 10px;
