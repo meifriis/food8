@@ -94,26 +94,50 @@
 
             var fimg = {
                 url: "fleisch.jpg", // url
-                scaledSize: new google.maps.Size(25, 25), // scaled size
+                scaledSize: new google.maps.Size(30, 30), // scaled size
 
             };
 
             var rimg = {
                 url: "rod.png", // url
-                scaledSize: new google.maps.Size(90, 20), // scaled size
+                scaledSize: new google.maps.Size(100, 30), // scaled size
 
             };
 
             var umimg = {
                 url: "um.jpg", // url
-                scaledSize: new google.maps.Size(25, 25), // scaled size
+                scaledSize: new google.maps.Size(30, 30), // scaled size
 
             };
 
 
             var fatimg = {
                 url: "fat.png", // url
-                scaledSize: new google.maps.Size(25, 25), // scaled size
+                scaledSize: new google.maps.Size(30, 30), // scaled size
+
+            };
+
+            var metierimg = {
+                url: "metier.jpg", // url
+                scaledSize: new google.maps.Size(30, 30), // scaled size
+
+            };
+
+            var cleaversimg = {
+                url: "cleavers.jpg", // url
+                scaledSize: new google.maps.Size(30, 30), // scaled size
+
+            };
+
+            var nohoimg = {
+                url: "noho.jpg", // url
+                scaledSize: new google.maps.Size(30, 30), // scaled size
+
+            };
+
+            var spisimg = {
+                url: "spis.jpg", // url
+                scaledSize: new google.maps.Size(30, 30), // scaled size
 
             };
 
@@ -159,7 +183,7 @@
             let marker4 = new google.maps.Marker({
                 position: metier,
                 title: "Metier",
-                icon: icon,
+                icon: metierimg,
                 map: map
 
             });
@@ -167,7 +191,7 @@
             let marker5 = new google.maps.Marker({
                 position: cleavers,
                 title: "Cleavers Meat Market",
-                icon: icon,
+                icon: cleaversimg,
                 map: map
 
             });
@@ -175,7 +199,7 @@
             let marker6 = new google.maps.Marker({
                 position: noho,
                 title: "NOHO",
-                icon: icon,
+                icon: nohoimg,
                 map: map
 
             });
@@ -183,7 +207,7 @@
             let marker7 = new google.maps.Marker({
                 position: spis,
                 title: "Spisehuset",
-                icon: icon,
+                icon: spisimg,
                 map: map
 
             });
@@ -261,7 +285,6 @@
                 infowindow8.open(map, marker7);
             });
         }
-
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpaz6ijnO6nG3lE-sZdqDWNLVHTP7TZPw
 &callback=initMap" async defer></script>
