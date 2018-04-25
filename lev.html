@@ -14,45 +14,21 @@
 
 <body>
 
+
     <section>
         <article>
             <a href="lever.html"><button class="tilbage"> Tilbage </button> </a>
             <img id="imgleverandor" data_foto src="" alt="">
-            <p id="beskrivelse" data_description> </p>
+            <p id="beskrivelse" data_description></p>
+            <p id="menu" data_menu></p>
             <p id="kontakt" data_kontakt> </p>
+            <p id="kontrol" data_kontrol> </p>
+            <div id="map"></div>
 
         </article>
     </section>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", hentJson);
-        let url = new URL(window.location.href);
-        let searchParams = new URLSearchParams(url.search);
-        let id = searchParams.get("id");
-        let apiURL = "http://magnuskea.dk/kea/food8/wordpress/wp-json/wp/v2/levarandor/" + id;
-        let levarandor = {};
 
-        async function hentJson() {
-            let dataJson = await fetch(apiURL);
-            levarandor = await dataJson.json();
-            console.log("Fetch it Gretchen");
-            visLevarandor();
-        }
-
-
-
-        function visLevarandor() {
-            console.log(levarandor);
-            let display = document.querySelector("section");
-            display.querySelector("[data_foto]").src = levarandor.acf.billede.url;
-            display.querySelector("[data_foto]").alt = levarandor.acf.billede.alt;
-            display.querySelector("[data_description]").innerHTML = levarandor.acf.beskrivelse;
-            display.querySelector("[data_kontakt]").innerHTML = levarandor.acf.kontakt;
-            display.querySelector("[data_foto]").addEventListener("click", () => {
-                location.href = "lev.html?id=" + levarandor.id;
-            });
-        };
-    </script>
 
     <footer>
         <div class="socialmedia">
@@ -77,6 +53,79 @@
             <p>Food8 ApS — Langelinie 10, 2100 København Ø — CVR nr. 39306999</p>
         </div>
     </footer>
+
+    <script>
+        //document.addEventListener("DOMContentLoaded", hentJson);
+        let url = new URL(window.location.href);
+        let searchParams = new URLSearchParams(url.search);
+        let id = searchParams.get("id");
+        let apiURL = "http://magnuskea.dk/kea/food8/wordpress/wp-json/wp/v2/levarandor/" + id;
+        let levarandor = {};
+        let position = {};
+        let icon;
+        let map;
+        async function hentJson() {
+            let dataJson = await fetch(apiURL);
+            levarandor = await dataJson.json();
+            console.log("Fetch it Gretchen");
+            visLevarandor();
+        }
+
+
+
+        function visLevarandor() {
+            console.log(levarandor.acf.lat);
+
+
+            position.lat = parseFloat(levarandor.acf.lat);
+            position.lng = parseFloat(levarandor.acf.lng);
+            icon = levarandor.acf.icon;
+
+            let marker = new google.maps.Marker({
+                position: position,
+                title: levarandor.acf.overskrift,
+                icon: icon,
+                map: map
+
+            });
+
+
+
+            let display = document.querySelector("section");
+            display.querySelector("[data_foto]").src = levarandor.acf.billede.url;
+            display.querySelector("[data_foto]").alt = levarandor.acf.billede.alt;
+            display.querySelector("[data_description]").innerHTML = levarandor.acf.beskrivelse;
+            display.querySelector("[data_menu]").innerHTML = levarandor.acf.menu;
+            display.querySelector("[data_kontrol] ").innerHTML = levarandor.acf.kontrolrapport;
+            display.querySelector("[data_kontakt]").innerHTML = levarandor.acf.kontakt;
+            display.querySelector("[data_foto]").addEventListener("click", () => {
+                location.href = "lev.html?id=" + levarandor.id;
+            });
+
+
+            console.log(position);
+
+        }
+
+        function initMap() {
+
+            console.log("uyuyiu", position.lat)
+            // Create a map object and specify the DOM element for display.
+            map = new google.maps.Map(document.querySelector('#map'), {
+                center: {
+                    lat: 55.6882502,
+                    lng: 12.5618154
+                },
+                zoom: 11
+            });
+
+            hentJson();
+        }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpaz6ijnO6nG3lE-sZdqDWNLVHTP7TZPw
+&callback=initMap" async defer></script>
+
 </body>
 
 </html>
