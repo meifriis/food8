@@ -66,7 +66,7 @@
                 klon.querySelector("[data_overskrift]").textContent = nyhed.acf.overskrift_;
                 klon.querySelector("[data_foto]").src = nyhed.acf.nyhedsbillede.url;
                 klon.querySelector("[data_foto]").alt = nyhed.acf.nyhedsbillede.alt;
-                // klon.querySelector("[data_beskrivelse]").innerHTML = nyhed.acf.beskrivelse_;
+                klon.querySelector("[data_lille_beskrivelse]").innerHTML = nyhed.acf.lille_beskrivelse;
                 klon.querySelector("[data_foto]").addEventListener("click", () => {
                     location.href = "nyhed.html?id=" + nyhed.id;
 
