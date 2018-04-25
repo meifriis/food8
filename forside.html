@@ -92,11 +92,32 @@
             });
 
 
-            var icon = {
+            var fimg = {
                 url: "fleisch.jpg", // url
                 scaledSize: new google.maps.Size(25, 25), // scaled size
 
             };
+
+            var rimg = {
+                url: "rod.png", // url
+                scaledSize: new google.maps.Size(90, 20), // scaled size
+
+            };
+
+            var umimg = {
+                url: "um.jpg", // url
+                scaledSize: new google.maps.Size(25, 25), // scaled size
+
+            };
+
+
+            var fatimg = {
+                url: "fat.png", // url
+                scaledSize: new google.maps.Size(25, 25), // scaled size
+
+            };
+
+
 
             /**********************************************/
 
@@ -104,7 +125,7 @@
             let marker = new google.maps.Marker({
                 position: fleisch,
                 title: "Fleisch",
-                icon: icon,
+                icon: fimg,
                 map: map
 
             });
@@ -113,7 +134,7 @@
             let marker1 = new google.maps.Marker({
                 position: rod,
                 title: "Rødder og Vin",
-                icon: icon,
+                icon: rimg,
                 map: map
 
             });
@@ -121,7 +142,7 @@
             let marker2 = new google.maps.Marker({
                 position: um,
                 title: "Un Mercato",
-                icon: icon,
+                icon: umimg,
                 map: map
 
             });
@@ -130,7 +151,7 @@
             let marker3 = new google.maps.Marker({
                 position: fat,
                 title: "Fat",
-                icon: icon,
+                icon: fatimg,
                 map: map
 
             });
@@ -240,6 +261,7 @@
                 infowindow8.open(map, marker7);
             });
         }
+
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpaz6ijnO6nG3lE-sZdqDWNLVHTP7TZPw
 &callback=initMap" async defer></script>
