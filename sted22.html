@@ -19,29 +19,17 @@
         <article>
             <a href="steder.html"><button class="tilbage"> <u>Tilbage</u> </button> </a>
 
-            <img id="imgsted" data_foto src="" alt="">
+            <img id="imgsted1" data_foto src="" alt="">
             <p id="beskrivelse" data_description></p>
-            <img id="imglillested" data_foto src="" alt="">
             <p id="stedbeskrivelse" data_description></p>
-
-            <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-left-align">
-Menu</button>
-
-            <div id="Demo1" class="w3-container w3-hide">
+            <details id="steddetails" open>
+                <summary> <u>Info</u> </summary>
                 <h2 id="overskrift" data_overskrift2> </h2>
                 <p id="menu" data_menu></p>
-            </div>
-            <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-left-align">
-Kontakt</button>
-
-            <div id="Demo2" class="w3-container w3-hide">
                 <h2 id="overskrift" data_overskrift3> </h2>
                 <p id="kontakt" data_kontakt> </p>
-            </div>
-            <h2 id="overskrift" data_overskrift3> </h2>
-            <p id="kontakt" data_kontakt> </p>
-            <h2 id="overskrift" data_overskrift4> </h2>
-            <p id="kontrol" data_kontrol> </p>
+                <h2 id="overskrift" data_overskrift4> </h2>
+                <p id="kontrol" data_kontrol> </p>
 
             </details>
 
@@ -95,17 +83,7 @@ Kontakt</button>
             <p>Food8 ApS — Langelinie 10, 2100 København Ø — CVR nr. 39306999</p>
         </div>
     </footer>
-    <script>
-        function myFunction(id) {
-            var x = document.getElementById(id);
-            if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show";
-            } else {
-                x.className = x.className.replace(" w3-show", "");
-            }
-        }
 
-    </script>
     <script>
         //document.addEventListener("DOMContentLoaded", hentJson);
         let url = new URL(window.location.href);
@@ -134,7 +112,6 @@ Kontakt</button>
             console.log(sted.acf.icon)
             var icon = {
                 url: sted.acf.icon.url,
-
                 scaledSize: new google.maps.Size(40, 40)
             };
 
@@ -180,8 +157,8 @@ Kontakt</button>
             // Create a map object and specify the DOM element for display.
             map = new google.maps.Map(document.querySelector('#map'), {
                 center: {
-                    lat: 55.6882502,
-                    lng: 12.5618154
+                    lat: 55.6760968,
+                    lng: 12.568337199999974
                 },
                 zoom: 12
             });
