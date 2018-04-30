@@ -19,9 +19,8 @@
         <article>
             <a href="steder.html"><button class="tilbage"> <u>Tilbage</u> </button> </a>
 
-            <img id="imgsted" data_foto src="" alt="">
+            <img id="imgsted1" data_foto src="" alt="">
             <p id="beskrivelse" data_description></p>
-            <img id="imglillested" data_foto src="" alt="">
             <p id="stedbeskrivelse" data_description></p>
             <details id="steddetails" open>
                 <summary> <u>Info</u> </summary>
@@ -113,7 +112,6 @@
             console.log(sted.acf.icon)
             var icon = {
                 url: sted.acf.icon.url,
-
                 scaledSize: new google.maps.Size(40, 40)
             };
 
@@ -159,14 +157,15 @@
             // Create a map object and specify the DOM element for display.
             map = new google.maps.Map(document.querySelector('#map'), {
                 center: {
-                    lat: 55.6882502,
-                    lng: 12.5618154
+                    lat: 55.6760968,
+                    lng: 12.568337199999974
                 },
                 zoom: 12
             });
 
             hentJson();
         }
+
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpaz6ijnO6nG3lE-sZdqDWNLVHTP7TZPw

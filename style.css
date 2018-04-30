@@ -11,6 +11,16 @@ body {
 
 }
 
+.mySlides {
+    display: none;
+}
+
+#splash {
+    padding: 10px;
+    margin-bottom: -25px;
+}
+
+
 #map {
     width: 90vw;
     height: 90vw;
@@ -23,7 +33,7 @@ body {
 /******************MENU************************/
 
 .dropbtn {
-    background-color: #57626e;
+    background-color: #65C3B0;
     color: white;
     padding: 4px;
     width: 13%;
@@ -32,12 +42,13 @@ body {
 }
 
 
+
 /*------ DROPDOWN CONTAINER -------*/
 
 .dropdown {
     display: inline-block;
     width: 100%;
-    background-color: #57626e;
+    background-color: #65C3B0;
     z-index: 1;
     text-align: center;
     margin-top: 30px;
@@ -56,7 +67,7 @@ body {
     display: none;
     position: absolute;
     font-family: "Open Sans", sans-serif;
-    background-color: #57626e;
+    background-color: #65C3B0;
     font-size: 1em;
     min-width: 190px;
     z-index: 1;
@@ -82,6 +93,11 @@ body {
 
 /**************************OVERORDNET********************/
 
+section {
+    display: grid;
+    grid-template-columns: repeat(400px, 3);
+}
+
 #kontrol a,
 #menu a {
     text-decoration: none;
@@ -98,6 +114,15 @@ body {
     padding: 10px;
     font-size: 1em;
     border-bottom: solid #dddddd 2px;
+}
+
+#overskrift {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 1.7em;
+    padding: 10px;
+    margin-bottom: -20px;
+
 }
 
 #menu {
@@ -138,12 +163,6 @@ body {
 
 /***NYHEDER******/
 
-h2 {
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
-
-}
-
 #imgnyhed {
     width: 100%;
 }
@@ -156,8 +175,10 @@ h2 {
 
 }
 
+
 #lillebeskrivelse {
     font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
     padding: 10px;
     margin-top: -30px;
     margin-bottom: -20px;
@@ -214,6 +235,15 @@ button:hover {
     margin: 0 auto;
 }
 
+#overskriftguid {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 1.7em;
+    padding: 10px;
+    margin-bottom: -20px;
+
+}
+
 bekrivelse a {
     color: #7cccba;
 }
@@ -242,7 +272,7 @@ summary:hover {
     margin: 0 auto;
 }
 
-#imglillested {
+#imgsted1 {
     width: 90%;
     display: block;
     margin: auto;
@@ -279,6 +309,9 @@ fieldset p {
 fieldset {
     border: none;
 }
+
+
+
 
 #bookbord {
     background-color: #57626e;
@@ -323,7 +356,7 @@ fieldset {
 /*****LEVERANDØR*****/
 
 #imgleverandor {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     display: block;
     margin: 0 auto;

@@ -15,14 +15,32 @@
     <header>
         <section id="forside">
             <img src="img/logo.png" alt="logo">
+
+
+            <div id="splash" style="max-width:100%">
+                <img class="mySlides" src="img/cleavers.png" style="width:100%">
+                <img class="mySlides" src="img/metier.png" style="width:100%">
+                <img class="mySlides" src="img/rod.png" style="width:100%">
+                <img class="mySlides" src="img/noho.png" style="width:100%">
+                <img class="mySlides" src="img/fatpike.png" style="width:100%">
+                <img class="mySlides" src="img/spisehuset.png" style="width:100%">
+                <img class="mySlides" src="img/unmercato.png" style="width:100%">
+                <img class="mySlides" src="img/fleisch.png" style="width:100%">
+
+            </div>
+
+
+
             <div class="dropdown">
                 <button class="dropbtn"><img src="img/menu%20hvid.png"></button>
                 <div class="dropdown-content">
-                    <a href="forside.html"> Forside </a>
-                    <a href="nyheder.html"> Nyheder </a>
+                    <a href="index.html"> Nyheder </a>
                     <a href="steder.html"> Steder </a>
                     <a href="lever.html"> Leverandører </a>
                     <a href="guides.html"> Guides </a>
+                    <a href="om.html"> Om Food8 </a>
+
+
                 </div>
             </div>
         </section>
@@ -71,6 +89,24 @@
     </footer>
 
     <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {
+                myIndex = 1
+            }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 3000); // Change image every 2 seconds
+        }
+
+
         let jSonUrl = "http://magnuskea.dk/kea/food8/wordpress/wp-json/wp/v2/nyhedder/";
         let nyheder = [];
         let display = document.querySelector("section");
@@ -97,9 +133,6 @@
                 klon.querySelector("[data_lille_beskrivelse]").innerHTML = nyhed.acf.lille_beskrivelse;
                 klon.querySelector("[data_foto]").addEventListener("click", () => {
                     location.href = "nyhed.html?id=" + nyhed.id;
-
-
-
                 });
 
                 klon.querySelector("[data_knap]").addEventListener("click", () => {
