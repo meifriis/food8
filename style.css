@@ -33,7 +33,7 @@ body {
 /******************MENU************************/
 
 .dropbtn {
-    background-color: #57626e;
+    background-color: #65C3B0;
     color: white;
     padding: 4px;
     width: 13%;
@@ -42,12 +42,13 @@ body {
 }
 
 
+
 /*------ DROPDOWN CONTAINER -------*/
 
 .dropdown {
     display: inline-block;
     width: 100%;
-    background-color: #57626e;
+    background-color: #65C3B0;
     z-index: 1;
     text-align: center;
     margin-top: 30px;
@@ -66,7 +67,7 @@ body {
     display: none;
     position: absolute;
     font-family: "Open Sans", sans-serif;
-    background-color: #57626e;
+    background-color: #65C3B0;
     font-size: 1em;
     min-width: 190px;
     z-index: 1;
@@ -91,6 +92,11 @@ body {
 
 
 /**************************OVERORDNET********************/
+
+section {
+    display: grid;
+    grid-template-columns: repeat(400px, 3);
+}
 
 #kontrol a,
 #menu a {
