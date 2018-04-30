@@ -89,6 +89,15 @@ body {
     display: block;
 }
 
+.dropbtn img {
+    width: 100%;
+}
+
+#stedforside {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+}
 
 /**************************OVERORDNET********************/
 
@@ -148,6 +157,10 @@ body {
 
 
 /****FORSIDE******/
+
+#forside {
+    margin-bottom: 20px;
+}
 
 #imgsforside {
     width: 100%;

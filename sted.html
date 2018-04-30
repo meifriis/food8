@@ -14,6 +14,19 @@
 
 <body>
 
+    <img id="stedforside" src="img/logo.png" alt="logo">
+    <div class="dropdown">
+        <button class="dropbtn"><img src="img/menu%20hvid.png"></button>
+        <div class="dropdown-content">
+            <a href="index.html"> Nyheder </a>
+            <a href="steder.html"> Steder </a>
+            <a href="lever.html"> Leverandører </a>
+            <a href="guides.html"> Guides </a>
+            <a href="om.html"> Om Food8 </a>
+
+
+        </div>
+    </div>
 
     <section>
         <article>
@@ -126,23 +139,23 @@
 
 
 
-            let display = document.querySelector("section");
-            display.querySelector("[data_foto]").src = sted.acf.billede.url;
-            display.querySelector("[data_foto]").alt = sted.acf.billede.alt;
-            display.querySelector("[data_description]").innerHTML = sted.acf.beskrivelse;
+            //let display = document.querySelector("section");
+            document.querySelector("[data_foto]").src = sted.acf.billede.url;
+            document.querySelector("[data_foto]").alt = sted.acf.billede.alt;
+            document.querySelector("[data_description]").innerHTML = sted.acf.beskrivelse;
 
-            display.querySelector("[data_overskrift2]").textContent = sted.acf.overskrift2;
+            document.querySelector("[data_overskrift2]").textContent = sted.acf.overskrift2;
 
-            display.querySelector("[data_overskrift3]").textContent = sted.acf.overskrift3;
+            document.querySelector("[data_overskrift3]").textContent = sted.acf.overskrift3;
 
-            display.querySelector("[data_overskrift4]").textContent = sted.acf.overskrift4;
+            document.querySelector("[data_overskrift4]").textContent = sted.acf.overskrift4;
 
 
 
-            display.querySelector("[data_menu]").innerHTML = sted.acf.menu;
-            display.querySelector("[data_kontrol] ").innerHTML = sted.acf.kontrolrapport;
-            display.querySelector("[data_kontakt]").innerHTML = sted.acf.kontakt;
-            display.querySelector("[data_foto]").addEventListener("click", () => {
+            document.querySelector("[data_menu]").innerHTML = sted.acf.menu;
+            document.querySelector("[data_kontrol] ").innerHTML = sted.acf.kontrolrapport;
+            document.querySelector("[data_kontakt]").innerHTML = sted.acf.kontakt;
+            document.querySelector("[data_foto]").addEventListener("click", () => {
                 location.href = "sted.html?id=" + sted.id;
             });
 
@@ -165,7 +178,6 @@
 
             hentJson();
         }
-
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpaz6ijnO6nG3lE-sZdqDWNLVHTP7TZPw
