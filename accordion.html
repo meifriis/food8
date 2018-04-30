@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <title>Food8</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <section>
+        <article>
+            <a href="steder.html"><button class="tilbage"> <u>Tilbage</u> </button> </a>
+
+            <img id="imgsted" data_foto src="" alt="">
+            <p id="beskrivelse" data_description></p>
+            <img id="imglillested" data_foto src="" alt="">
+            <p id="stedbeskrivelse" data_description></p>
+            <details id="steddetails" open>
+                <u>Info</u>
+                <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-left-align">
+Menu</button>
+
+                <div id="Demo1" class="w3-container w3-hide">
+                    <h2 id="overskrift" data_overskrift2> </h2>
+                    <p id="menu" data_menu></p>
+                </div>
+                <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-left-align">
+Kontakt</button>
+
+                <div id="Demo2" class="w3-container w3-hide">
+                    <h2 id="overskrift" data_overskrift3> </h2>
+                    <p id="kontakt" data_kontakt> </p>
+                </div>
+                <h2 id="overskrift" data_overskrift3> </h2>
+                <p id="kontakt" data_kontakt> </p>
+                <h2 id="overskrift" data_overskrift4> </h2>
+                <p id="kontrol" data_kontrol> </p>
+
+            </details>
+
+            <div id="bookbord">
+                <fieldset>
+                    <p> BOOK BORD </p>
+                    <input id="personer" type="text" class="personer" name="antal" placeholder="Antal Personer">
+
+                    <label for="time"><p id="dato"> Vælg Dato</p></label>
+                    <input id="date" type="date" name="dato ">
+
+                    <br><br><br>
+
+                    <input id="book" type="submit" value="BEKRÆFT BOOKING ">
+
+
+
+                </fieldset>
+
+
+
+            </div>
+            <div id="map"></div>
+
+
+        </article>
+    </section>
+
+
+
+    <footer>
+        <div class="socialmedia">
+            <div class="content_box">
+                <a href="https://www.facebook.com/food8dk/" target="_blank">
+                    <img alt="facebook" src="img/facebook%20logo.png">
+                </a>
+                <a href="https://www.instagram.com/food8dk/" target="_blank">
+                    <img alt="content_box instagram" src="img/insta.png">
+                </a>
+            </div>
+
+        </div>
+        <div class="content_box2">
+            <a href="http://stromworks.com/" target="_blank">
+                    <img alt="content_box strom" src="img/strom.png">
+                </a>
+        </div>
+        <div>
+            <p>info@food8.dk</p>
+            <p><a href="https://food8.dk/cookie-og-privatlivspolitik/"><u>Cookie- og privatlivspolitik</u></a></p>
+            <p>Food8 ApS — Langelinie 10, 2100 København Ø — CVR nr. 39306999</p>
+        </div>
+    </footer>
+    <script>
+        function myFunction(id) {
+            var x = document.getElementById(id);
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+    </script>
+    <script>
+        //document.addEventListener("DOMContentLoaded", hentJson);
+        let url = new URL(window.location.href);
+        let searchParams = new URLSearchParams(url.search);
+        let id = searchParams.get("id");
+        let apiURL = "http://magnuskea.dk/kea/food8/wordpress/wp-json/wp/v2/steder/" + id;
+        let sted = {};
+        let position = {};
+        let icon;
+        let map;
+        async function hentJson() {
+            let dataJson = await fetch(apiURL);
+            sted = await dataJson.json();
+            console.log("Fetch it Gretchen");
+            visSted();
+        }
+
+
+
+        function visSted() {
+            console.log(sted.acf.lat);
+
+
+            position.lat = parseFloat(sted.acf.lat);
+            position.lng = parseFloat(sted.acf.lng);
+            console.log(sted.acf.icon)
+            var icon = {
+                url: sted.acf.icon.url,
+
+                scaledSize: new google.maps.Size(40, 40)
+            };
+
+            let marker = new google.maps.Marker({
+                position: position,
+                title: sted.acf.overskrift,
+                icon: icon,
+                map: map
+
+            });
+
+
+
+
+            let display = document.querySelector("section");
+            display.querySelector("[data_foto]").src = sted.acf.billede.url;
+            display.querySelector("[data_foto]").alt = sted.acf.billede.alt;
+            display.querySelector("[data_description]").innerHTML = sted.acf.beskrivelse;
+
+            display.querySelector("[data_overskrift2]").textContent = sted.acf.overskrift2;
+
+            display.querySelector("[data_overskrift3]").textContent = sted.acf.overskrift3;
+
+            display.querySelector("[data_overskrift4]").textContent = sted.acf.overskrift4;
+
+
+
+            display.querySelector("[data_menu]").innerHTML = sted.acf.menu;
+            display.querySelector("[data_kontrol] ").innerHTML = sted.acf.kontrolrapport;
+            display.querySelector("[data_kontakt]").innerHTML = sted.acf.kontakt;
+            display.querySelector("[data_foto]").addEventListener("click", () => {
+                location.href = "sted.html?id=" + sted.id;
+            });
+
+
+            console.log(position);
+
+        }
+
+        function initMap() {
+
+            console.log("uyuyiu", position.lat)
+            // Create a map object and specify the DOM element for display.
+            map = new google.maps.Map(document.querySelector('#map'), {
+                center: {
+                    lat: 55.6882502,
+                    lng: 12.5618154
+                },
+                zoom: 12
+            });
+
+            hentJson();
+        }
+
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpaz6ijnO6nG3lE-sZdqDWNLVHTP7TZPw
+&callback=initMap" async defer></script>
+
+</body>
+
+</html>
