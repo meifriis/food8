@@ -10,6 +10,8 @@
     <title>Food8</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 </head>
 
 <body>
@@ -31,6 +33,12 @@ Menu</button>
                 <h2 id="overskrift" data_overskrift2></h2>
                 <p id="menu" data_menu></p>
             </div>
+            <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-left-align">Åbningstider</button>
+
+            <div id="Demo3" class="w3-container w3-hide">
+                <h2 id="overskrift" data_overskrift> </h2>
+                <p id="abningstider" data_abningstider> </p>
+            </div>
             <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-left-align">
 Kontakt</button>
 
@@ -38,8 +46,8 @@ Kontakt</button>
                 <h2 id="overskrift" data_overskrift3> </h2>
                 <p id="kontakt" data_kontakt> </p>
             </div>
-            <h2 id="overskrift" data_overskrift3> </h2>
-            <p id="kontakt" data_kontakt> </p>
+
+
             <h2 id="overskrift" data_overskrift4> </h2>
             <p id="kontrol" data_kontrol> </p>
 
@@ -104,7 +112,6 @@ Kontakt</button>
                 x.className = x.className.replace(" w3-show", "");
             }
         }
-
     </script>
     <script>
         //document.addEventListener("DOMContentLoaded", hentJson);
@@ -127,7 +134,6 @@ Kontakt</button>
 
         function visSted() {
             console.log(sted.acf.lat);
-
 
             position.lat = parseFloat(sted.acf.lat);
             position.lng = parseFloat(sted.acf.lng);
@@ -156,6 +162,8 @@ Kontakt</button>
 
             display.querySelector("[data_overskrift2]").textContent = sted.acf.overskrift2;
 
+            display.querySelector("[data_overskrift]").textContent = sted.acf.overskrift;
+
             display.querySelector("[data_overskrift3]").textContent = sted.acf.overskrift3;
 
             display.querySelector("[data_overskrift4]").textContent = sted.acf.overskrift4;
@@ -164,6 +172,7 @@ Kontakt</button>
 
             display.querySelector("[data_menu]").innerHTML = sted.acf.menu;
             display.querySelector("[data_kontrol] ").innerHTML = sted.acf.kontrolrapport;
+            display.querySelector("[data_abningstider]").innerHTML = sted.acf.abningstider;
             display.querySelector("[data_kontakt]").innerHTML = sted.acf.kontakt;
             display.querySelector("[data_foto]").addEventListener("click", () => {
                 location.href = "sted.html?id=" + sted.id;
@@ -188,7 +197,6 @@ Kontakt</button>
 
             hentJson();
         }
-
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpaz6ijnO6nG3lE-sZdqDWNLVHTP7TZPw
