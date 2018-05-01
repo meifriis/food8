@@ -251,9 +251,14 @@ bekrivelse a {
 
 /*****STEDER******/
 
-#steddetails {
+#steddetails,
+#steddetails2,
+#steddetails3,
+#steddetails4 {
+    margin-left: 20px;
     padding: 10px;
     padding-bottom: 30px;
+    text-align: left;
 }
 
 summary {
