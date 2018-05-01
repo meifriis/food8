@@ -391,6 +391,13 @@ fieldset {
     grid-template-columns: repeat(3, 1fr);
 }
 
+#nyhedsbrev {
+    width: 15%;
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
 .content_box img {
     width: 15%;
 }
