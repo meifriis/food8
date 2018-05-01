@@ -316,7 +316,6 @@ details {
 
 #bookbord {
     padding: 30px;
-    display: block;
 }
 
 #bookbord iframe {
@@ -359,7 +358,7 @@ fieldset {
     margin: 0 auto;
     border: none;
     color: #070e14;
-    font-size: 1.1em;
+    font-size: 1em;
     font-family: 'Raleway', sans-serif;
     border-radius: 20px;
     text-align: center;
