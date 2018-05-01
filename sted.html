@@ -10,61 +10,37 @@
     <title>Food8</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 </head>
 
 <body>
 
-    <img id="stedforside" src="img/logo.png" alt="logo">
-    <div class="dropdown">
-        <button class="dropbtn"><img src="img/menu%20hvid.png"></button>
-        <div class="dropdown-content">
-            <a href="index.html"> Nyheder </a>
-            <a href="steder.html"> Steder </a>
-            <a href="lever.html"> Leverandører </a>
-            <a href="guides.html"> Guides </a>
-            <a href="om.html"> Om Food8 </a>
-
-
-        </div>
-    </div>
 
     <section>
         <article>
             <a href="steder.html"><button class="tilbage"> <u>Tilbage</u> </button> </a>
 
-            <img id="imgsted" data_foto src="" alt="">
+            <img id="imgsted1" data_foto src="" alt="">
             <p id="beskrivelse" data_description></p>
-            <img id="imglillested" data_foto src="" alt="">
             <p id="stedbeskrivelse" data_description></p>
-
-            <button id="demo" onclick="myFunction('Demo1')" class="w3-button w3-block">
-Menu</button>
-
-            <div id="Demo1" class="w3-container w3-hide">
+            <details id="steddetails" close>
+                <summary> <u>Menu</u> </summary>
                 <p id="menu" data_menu></p>
-            </div>
-            <button id="demo" onclick="myFunction('Demo3')" class="w3-button w3-block">Åbningstider</button>
+            </details>
 
-            <div id="Demo3" class="w3-container w3-hide">
-                <p id="abningstider" data_abningstider> </p>
-            </div>
-            <button id="demo" onclick="myFunction('Demo2')" class="w3-button w3-block">
-Kontakt</button>
-
-            <div id="Demo2" class="w3-container w3-hide">
+            <details id="steddetails2" close>
+                <summary> <u>Åbningstider</u> </summary>
+                <p id="tider" data_tider> </p>
+            </details>
+            <details id="steddetails3" close>
+                <summary> <u>Kontakt</u> </summary>
                 <p id="kontakt" data_kontakt> </p>
-            </div>
-
-            <button id="demo4" onclick="myFunction('Demo4')" class="w3-button w3-block">
-Kontrolrapport</button>
-
-            <div id="demo4" class="w3-container w3-hide">
+            </details>
+            <details id="steddetails3" close>
+                <summary> <u>Kontrolrapport</u> </summary>
+                <h2 id="overskrift" data_overskrift4> </h2>
                 <p id="kontrol" data_kontrol> </p>
-            </div>
 
-
+            </details>
 
             <div id="bookbord">
                 <fieldset>
@@ -116,16 +92,7 @@ Kontrolrapport</button>
             <p>Food8 ApS — Langelinie 10, 2100 København Ø — CVR nr. 39306999</p>
         </div>
     </footer>
-    <script>
-        function myFunction(id) {
-            var x = document.getElementById(id);
-            if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show";
-            } else {
-                x.className = x.className.replace(" w3-show", "");
-            }
-        }
-    </script>
+
     <script>
         //document.addEventListener("DOMContentLoaded", hentJson);
         let url = new URL(window.location.href);
@@ -148,12 +115,12 @@ Kontrolrapport</button>
         function visSted() {
             console.log(sted.acf.lat);
 
+
             position.lat = parseFloat(sted.acf.lat);
             position.lng = parseFloat(sted.acf.lng);
             console.log(sted.acf.icon)
             var icon = {
                 url: sted.acf.icon.url,
-
                 scaledSize: new google.maps.Size(40, 40)
             };
 
@@ -168,37 +135,17 @@ Kontrolrapport</button>
 
 
 
-            //let display = document.querySelector("section");
-            document.querySelector("[data_foto]").src = sted.acf.billede.url;
-            document.querySelector("[data_foto]").alt = sted.acf.billede.alt;
-            document.querySelector("[data_description]").innerHTML = sted.acf.beskrivelse;
-
-            document.querySelector("[data_overskrift2]").textContent = sted.acf.overskrift2;
-
-<<<<<<< HEAD
-            document.querySelector("[data_overskrift3]").textContent = sted.acf.overskrift3;
-=======
-            display.querySelector("[data_overskrift]").textContent = sted.acf.overskrift;
-
-            display.querySelector("[data_overskrift3]").textContent = sted.acf.overskrift3;
->>>>>>> origin/master
-
-            document.querySelector("[data_overskrift4]").textContent = sted.acf.overskrift4;
+            let display = document.querySelector("section");
+            display.querySelector("[data_foto]").src = sted.acf.billede.url;
+            display.querySelector("[data_foto]").alt = sted.acf.billede.alt;
+            display.querySelector("[data_description]").innerHTML = sted.acf.beskrivelse;
 
 
-
-<<<<<<< HEAD
-            document.querySelector("[data_menu]").innerHTML = sted.acf.menu;
-            document.querySelector("[data_kontrol] ").innerHTML = sted.acf.kontrolrapport;
-            document.querySelector("[data_kontakt]").innerHTML = sted.acf.kontakt;
-            document.querySelector("[data_foto]").addEventListener("click", () => {
-=======
             display.querySelector("[data_menu]").innerHTML = sted.acf.menu;
+            display.querySelector("[data_tider]").innerHTML = sted.acf.tider;
             display.querySelector("[data_kontrol] ").innerHTML = sted.acf.kontrolrapport;
-            display.querySelector("[data_abningstider]").innerHTML = sted.acf.abningstider;
             display.querySelector("[data_kontakt]").innerHTML = sted.acf.kontakt;
             display.querySelector("[data_foto]").addEventListener("click", () => {
->>>>>>> origin/master
                 location.href = "sted.html?id=" + sted.id;
             });
 
@@ -213,14 +160,15 @@ Kontrolrapport</button>
             // Create a map object and specify the DOM element for display.
             map = new google.maps.Map(document.querySelector('#map'), {
                 center: {
-                    lat: 55.6882502,
-                    lng: 12.5618154
+                    lat: 55.6760968,
+                    lng: 12.568337199999974
                 },
                 zoom: 12
             });
 
             hentJson();
         }
+
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpaz6ijnO6nG3lE-sZdqDWNLVHTP7TZPw

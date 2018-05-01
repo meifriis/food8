@@ -33,7 +33,7 @@ body {
 /******************MENU************************/
 
 .dropbtn {
-    background-color: #65C3B0;
+    background-color: #57626e;
     color: white;
     padding: 4px;
     width: 13%;
@@ -48,7 +48,7 @@ body {
 .dropdown {
     display: inline-block;
     width: 100%;
-    background-color: #65C3B0;
+    background-color: #57626e;
     z-index: 1;
     text-align: center;
     margin-top: 30px;
@@ -67,7 +67,7 @@ body {
     display: none;
     position: absolute;
     font-family: "Open Sans", sans-serif;
-    background-color: #65C3B0;
+    background-color: #57626e;
     font-size: 1em;
     min-width: 190px;
     z-index: 1;
@@ -90,15 +90,6 @@ body {
     display: block;
 }
 
-.dropbtn img {
-    width: 100%;
-}
-
-#stedforside {
-    width: 90%;
-    display: block;
-    margin: 0 auto;
-}
 
 /**************************OVERORDNET********************/
 
@@ -173,10 +164,6 @@ section {
 
 
 /****FORSIDE******/
-
-#forside {
-    margin-bottom: 20px;
-}
 
 #imgsforside {
     width: 100%;

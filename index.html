@@ -17,7 +17,17 @@
             <a href="index.html"><img src="img/logo.png" alt="logo"></a>
 
 
+            <div id="splash" style="max-width:100%">
+                <img class="mySlides" src="img/cleavers.png" style="width:100%">
+                <img class="mySlides" src="img/metier.png" style="width:100%">
+                <img class="mySlides" src="img/rod.png" style="width:100%">
+                <img class="mySlides" src="img/noho.png" style="width:100%">
+                <img class="mySlides" src="img/fatpike.png" style="width:100%">
+                <img class="mySlides" src="img/spisehuset.png" style="width:100%">
+                <img class="mySlides" src="img/unmercato.png" style="width:100%">
+                <img class="mySlides" src="img/fleisch.png" style="width:100%">
 
+            </div>
 
 
 
@@ -32,26 +42,13 @@
 
 
                 </div>
-
-            </div>
-
-            <div id="splash" style="max-width:100%">
-                <img class="mySlides" src="img/cleavers.png" style="width:100%">
-                <img class="mySlides" src="img/metier.png" style="width:100%">
-                <img class="mySlides" src="img/rod.png" style="width:100%">
-                <img class="mySlides" src="img/noho.png" style="width:100%">
-                <img class="mySlides" src="img/fatpike.png" style="width:100%">
-                <img class="mySlides" src="img/spisehuset.png" style="width:100%">
-                <img class="mySlides" src="img/unmercato.png" style="width:100%">
-                <img class="mySlides" src="img/fleisch.png" style="width:100%">
-
             </div>
         </section>
     </header>
 
 
 
-    <section id="nyheder">
+    <section>
 
     </section>
 
@@ -112,7 +109,7 @@
 
         let jSonUrl = "http://magnuskea.dk/kea/food8/wordpress/wp-json/wp/v2/nyhedder/";
         let nyheder = [];
-        let display = document.querySelector("#nyheder");
+        let display = document.querySelector("section");
         let template = document.querySelector("template");
 
         document.addEventListener("DOMContentLoaded", hentJson);
@@ -147,6 +144,7 @@
                 display.appendChild(klon);
             });
         }
+
     </script>
 </body>
 
