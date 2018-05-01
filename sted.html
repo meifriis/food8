@@ -28,7 +28,7 @@
         </div>
     </section>
 
-    <section id="enkelsted">
+    <section>
 
         <article>
             <a href="steder.html"><button class="tilbage"> <u>Tilbage</u> </button> </a>
@@ -149,7 +149,7 @@
 
 
 
-            let display = document.querySelector("enkelsted");
+            let display = document.querySelector("section");
             display.querySelector("[data_foto]").src = sted.acf.billede.url;
             display.querySelector("[data_foto]").alt = sted.acf.billede.alt;
             display.querySelector("[data_description]").innerHTML = sted.acf.beskrivelse;
@@ -180,7 +180,6 @@
 
             hentJson();
         }
-
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpaz6ijnO6nG3lE-sZdqDWNLVHTP7TZPw

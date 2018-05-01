@@ -31,7 +31,7 @@
 
 
 
-    <section id="lever">
+    <section>
         <article>
             <a href="lever.html"><button class="tilbage"> <u>Tilbage</u> </button> </a>
             <img id="imgleverandor" data_foto src="" alt="">
@@ -113,7 +113,7 @@
 
 
 
-            let display = document.querySelector("lever");
+            let display = document.querySelector("section");
             display.querySelector("[data_foto]").src = levarandor.acf.billede.url;
             display.querySelector("[data_foto]").alt = levarandor.acf.billede.alt;
             display.querySelector("[data_description]").innerHTML = levarandor.acf.beskrivelse;
@@ -142,7 +142,6 @@
 
             hentJson();
         }
-
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpaz6ijnO6nG3lE-sZdqDWNLVHTP7TZPw
