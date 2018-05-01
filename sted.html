@@ -23,11 +23,20 @@
             <p id="beskrivelse" data_description></p>
             <p id="stedbeskrivelse" data_description></p>
             <details id="steddetails" open>
-                <summary> <u>Info</u> </summary>
-                <h2 id="overskrift" data_overskrift2> </h2>
+                <summary> <u>Menu</u> </summary>
                 <p id="menu" data_menu></p>
-                <h2 id="overskrift" data_overskrift3> </h2>
+            </details>
+
+            <details id="steddetails2" open>
+                <summary> <u>Åbningstider</u> </summary>
+                <p id="tider" data_tider> </p>
+            </details>
+            <details id="steddetails3" open>
+                <summary> <u>Kontakt</u> </summary>
                 <p id="kontakt" data_kontakt> </p>
+            </details>
+            <details id="steddetails3" open>
+                <summary> <u>Kontrolrapport</u> </summary>
                 <h2 id="overskrift" data_overskrift4> </h2>
                 <p id="kontrol" data_kontrol> </p>
 
@@ -131,15 +140,9 @@
             display.querySelector("[data_foto]").alt = sted.acf.billede.alt;
             display.querySelector("[data_description]").innerHTML = sted.acf.beskrivelse;
 
-            display.querySelector("[data_overskrift2]").textContent = sted.acf.overskrift2;
-
-            display.querySelector("[data_overskrift3]").textContent = sted.acf.overskrift3;
-
-            display.querySelector("[data_overskrift4]").textContent = sted.acf.overskrift4;
-
-
 
             display.querySelector("[data_menu]").innerHTML = sted.acf.menu;
+            display.querySelector("[data_tider]").innerHTML = sted.acf.tider;
             display.querySelector("[data_kontrol] ").innerHTML = sted.acf.kontrolrapport;
             display.querySelector("[data_kontakt]").innerHTML = sted.acf.kontakt;
             display.querySelector("[data_foto]").addEventListener("click", () => {
