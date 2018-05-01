@@ -13,9 +13,23 @@
 </head>
 
 <body>
+    <section id="forside">
+        <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+        <div class="dropdown">
+            <button class="dropbtn"><img src="img/menu%20hvid.png"></button>
+            <div class="dropdown-content">
+                <a href="index.html"> Nyheder </a>
+                <a href="steder.html"> Steder </a>
+                <a href="lever.html"> Leverandører </a>
+                <a href="guides.html"> Guides </a>
+                <a href="om.html"> Om Food8 </a>
 
+            </div>
+        </div>
+    </section>
 
-    <section>
+    <section id="enkelsted">
+
         <article>
             <a href="steder.html"><button class="tilbage"> <u>Tilbage</u> </button> </a>
 
@@ -135,12 +149,10 @@
 
 
 
-            let display = document.querySelector("section");
+            let display = document.querySelector("enkelsted");
             display.querySelector("[data_foto]").src = sted.acf.billede.url;
             display.querySelector("[data_foto]").alt = sted.acf.billede.alt;
             display.querySelector("[data_description]").innerHTML = sted.acf.beskrivelse;
-
-
             display.querySelector("[data_menu]").innerHTML = sted.acf.menu;
             display.querySelector("[data_tider]").innerHTML = sted.acf.tider;
             display.querySelector("[data_kontrol] ").innerHTML = sted.acf.kontrolrapport;
