@@ -318,6 +318,60 @@ details {
     padding: 30px;
 }
 
+
+/************** NYHEDSBREV ************/
+
+fieldset p {
+    color: white;
+    font-size: 2.4em;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 20px;
+}
+
+fieldset {
+    border: none;
+}
+
+
+
+
+#tilmeld {
+    background-color: #57626e;
+    width: 90vw;
+    height: 90vw;
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 15px;
+
+}
+
+#meld {
+    text-decoration: none;
+    width: 50vw;
+    height: 13vw;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    color: #070e14;
+    font-size: 1.1em;
+    font-family: 'Raleway', sans-serif;
+    border-radius: 20px;
+    text-align: center;
+    padding: 2px;
+}
+
+#din,
+#mailadresse {
+    width: 55vw;
+    height: 7vw;
+    border-radius: 15px;
+    padding-left: 12px;
+    font-size: 1em;
+    font-family: 'Raleway', sans-serif;
+
+}
+
 /*****LEVERANDØR*****/
 
 #imgleverandor {
