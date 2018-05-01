@@ -151,7 +151,12 @@ section {
     padding: 10px;
 }
 
-
+#tider {
+    padding: 10px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+}
 
 
 /****FORSIDE******/
