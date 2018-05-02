@@ -48,7 +48,59 @@
 
 
 
+
+    <div id="myModal" class="modal">
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <article>
+                <div id="tilmeld">
+                    <fieldset>
+                        <p> Tilmeld dig Food8's nyhedsbrev </p>
+                        <input id="mailadresse" type="text" class="mailadresse" name="din" placeholder="Din mailadresse">
+                        <br><br><br>
+
+                        <input id="meld" type="submit" value="BEKRÆFT TILMELDING ">
+                    </fieldset>
+                </div>
+            </article>
+        </div>
+
+    </div>
+
+
+
     <div id="map"></div>
+
+
+
+    <footer>
+        <div class="socialmedia">
+            <div class="content_box">
+                <a href="https://www.facebook.com/food8dk/" target="_blank">
+                    <img alt="Food8 facebook" src="img/facebook%20logo.png">
+                </a>
+                <a href="https://www.instagram.com/food8dk/" target="_blank">
+                    <img alt="Food8 instagram" src="img/insta.png">
+                </a>
+            </div>
+
+        </div>
+        <div class="content_box2">
+            <a href="http://stromworks.com/" target="_blank">
+                    <img alt="Strøm logo" src="img/strom.png">
+                </a>
+        </div>
+        <div>
+            <p>info@food8.dk</p>
+            <button id="myBtn"> <img src ="img/news1.png" alt="news"> </button>
+            <p>Tilmeld dig vores nyhedsbrev </p>
+
+
+            <p><a href="https://food8.dk/cookie-og-privatlivspolitik/"><u>Cookie- og privatlivspolitik</u></a></p>
+            <p>Food8 ApS — Langelinie 10, 2100 København Ø — CVR nr. 39306999</p>
+        </div>
+    </footer>
 
     <script>
         let jSonUrl = "http://magnuskea.dk/kea/food8/wordpress/wp-json/wp/v2/omfood8_";
@@ -337,31 +389,6 @@
 &callback=initMap" async defer></script>
 
 
-    <footer>
-        <div class="socialmedia">
-            <div class="content_box">
-                <a href="https://www.facebook.com/food8dk/" target="_blank">
-                    <img alt="Food8 facebook" src="img/facebook%20logo.png">
-                </a>
-                <a href="https://www.instagram.com/food8dk/" target="_blank">
-                    <img alt="Food8 instagram" src="img/insta.png">
-                </a>
-            </div>
-
-        </div>
-        <div class="content_box2">
-            <a href="http://stromworks.com/" target="_blank">
-                    <img alt="Strøm logo" src="img/strom.png">
-                </a>
-        </div>
-        <div>
-            <p>info@food8.dk</p>
-            <p><a href="nyhedsbrev.html" target="_blank">
-                <img id="nyhedsbrev" alt="Food8 nyhedsbrev" src="img/news1.png">Tilmeld dig vores nyhedsbrev </a></p>
-            <p><a href="https://food8.dk/cookie-og-privatlivspolitik/"><u>Cookie- og privatlivspolitik</u></a></p>
-            <p>Food8 ApS — Langelinie 10, 2100 København Ø — CVR nr. 39306999</p>
-        </div>
-    </footer>
 </body>
 
 </html>
