@@ -40,6 +40,31 @@
      </article>
    </template>
 
+
+
+
+
+    <div id="myModal" class="modal">
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <article>
+                <div id="tilmeld">
+                    <fieldset>
+                        <p> Tilmeld dig Food8's nyhedsbrev </p>
+                        <input id="mailadresse" type="text" class="mailadresse" name="din" placeholder="Din mailadresse">
+                        <br><br><br>
+
+                        <input id="meld" type="submit" value="BEKRÆFT TILMELDING ">
+                    </fieldset>
+                </div>
+            </article>
+        </div>
+
+    </div>
+
+
+
     <footer>
         <div class="socialmedia">
             <div class="content_box">
@@ -57,10 +82,15 @@
                     <img alt="Strøm logo" src="img/strom.png">
                 </a>
         </div>
+
+        <button id="myBtn"> <img src ="img/news1.png" alt="news"> </button>
+        <p>Tilmeld dig vores nyhedsbrev </p>
+
+
         <div>
             <p>info@food8.dk</p>
-            <p><a href="nyhedsbrev.html" target="_blank">
-                <img id="nyhedsbrev" alt="food8 nyhedsbrev" src="img/news1.png">Tilmeld dig vores nyhedsbrev </a></p>
+
+
             <p><a href="https://food8.dk/cookie-og-privatlivspolitik/"><u>Cookie- og privatlivspolitik</u></a></p>
             <p>Food8 ApS — Langelinie 10, 2100 København Ø — CVR nr. 39306999</p>
         </div>
@@ -101,6 +131,33 @@
 
 
 
+        }
+
+
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
     </script>
 </body>
